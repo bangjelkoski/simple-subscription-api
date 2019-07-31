@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="{{ asset(mix('css/app.css')) }}">
 </head>
 
-<body>
+<body class="h-screen w-screen overflow-y-hidden bg-gray-200">
     <div id="app" v-cloak>
         <app />
     </div>

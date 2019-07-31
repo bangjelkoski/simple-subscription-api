@@ -2,7 +2,10 @@
 
 namespace App\Models;
 
+use App\Repositories\FieldRepository;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
@@ -13,7 +16,7 @@ class Field extends Model
     protected $fillable = ['type', 'title', 'placeholder'];
 
     protected $casts = [
-        'parameters' => 'array',
+        'parameters' => 'json',
     ];
 
     public static function getFromCode($code)
@@ -33,8 +36,11 @@ class Field extends Model
         return FieldRepository::make($this->type, $this);
     }
 
-    public function setParametersAttribute($parameters)
+    public function validate()
     {
-        $this->attributes['parameters'] = json_encode($parameters);
+        return Validator::make(request()->all(), [
+            'title' => 'required',
+            'type'  => ['required', Rule::in(FieldRepository::codes())],
+        ])->validate();
     }
 }

@@ -18,7 +18,6 @@ class FieldSeeder extends Seeder
 
         factory(Field::class)->create([
             'title'       => 'Email',
-            'code'        => 'email',
             'placeholder' => 'john@example.com',
             'type'        => $fields['email'],
             'parameters'  => [
@@ -31,7 +30,6 @@ class FieldSeeder extends Seeder
 
         factory(Field::class)->create([
             'title'       => 'Name',
-            'code'        => 'name',
             'placeholder' => 'John Doe',
             'type'        => $fields['text'],
             'parameters'  => [
@@ -45,7 +43,6 @@ class FieldSeeder extends Seeder
 
         factory(Field::class)->create([
             'title'      => 'State',
-            'code'       => 'state',
             'type'       => $fields['select'],
             'parameters' => [
                 'validation' => [
@@ -55,6 +52,5 @@ class FieldSeeder extends Seeder
                 'options'    => SubscriberState::getStates(),
             ],
         ]);
-
     }
 }

@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Models\Field;
+use App\Repositories\FieldRepository;
 use Faker\Generator as Faker;
 
 $factory->define(Field::class, function (Faker $faker) {
@@ -10,7 +11,7 @@ $factory->define(Field::class, function (Faker $faker) {
 
     return [
         'title'       => $faker->word,
-        'placeholder' => $faker->words(2),
+        'placeholder' => $faker->word,
         'type'        => $fields['text'],
         'parameters'  => [
             'validation' => [

@@ -14,8 +14,8 @@ class CreateFieldSubscriberTable extends Migration
     public function up()
     {
         Schema::create('field_subscriber', function (Blueprint $table) {
-            $table->unsignedInteger('field_id');
-            $table->unsignedInteger('subscriber_id');
+            $table->bigInteger('field_id')->unsigned();
+            $table->bigInteger('subscriber_id')->unsigned();
             $table->string('value')->nullable();
 
             $table->unique(['field_id', 'subscriber_id']);

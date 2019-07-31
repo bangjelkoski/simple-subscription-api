@@ -12,6 +12,10 @@ class Field extends Model
 
     protected $fillable = ['type', 'title', 'placeholder'];
 
+    protected $casts = [
+        'parameters' => 'array',
+    ];
+
     public static function getFromCode($code)
     {
         return static::whereCode($code)->first();
@@ -20,12 +24,17 @@ class Field extends Model
     public function getSlugOptions(): SlugOptions
     {
         return SlugOptions::create()
-            ->generateSlugsFrom('name')
+            ->generateSlugsFrom('title')
             ->saveSlugsTo('code');
     }
 
     public function type()
     {
         return FieldRepository::make($this->type, $this);
+    }
+
+    public function setParametersAttribute($parameters)
+    {
+        $this->attributes['parameters'] = json_encode($parameters);
     }
 }

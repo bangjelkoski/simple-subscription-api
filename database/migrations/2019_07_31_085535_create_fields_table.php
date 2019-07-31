@@ -19,13 +19,10 @@ class CreateFieldsTable extends Migration
             $table->string('code', 255)->unique();
             $table->string('placeholder', 255)->nullable();
             $table->string('type', 255);
-            $table->json('parameters');
-            $table->unsignedInteger('subscriber_id');
-            $table->nullableTimestamps();
-        });
 
-        Schema::table('fields', function (Blueprint $table) {
-            $table->foreign('subscriber_id', 'fields_subscribers_id_foreign')->references('id')->on('subscribers')->onDelete('CASCADE')->onUpdate('RESTRICT');
+            $table->json('parameters');
+
+            $table->nullableTimestamps();
         });
     }
 

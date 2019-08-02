@@ -23,6 +23,10 @@ $factory->afterCreating(Subscriber::class, function (Subscriber $subscriber, Fak
         'value' => $faker->firstName,
     ]);
 
+    $subscriber->fields()->attach(Field::getFromCode('image')->id, [
+        'value' => $faker->imageUrl,
+    ]);
+
     $subscriber->fields()->attach(Field::getFromCode('state')->id, [
         'value' => Arr::random(SubscriberState::getStates()),
     ]);

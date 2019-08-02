@@ -7,21 +7,21 @@ use App\Models\Subscriber;
 
 class Text extends FieldType
 {
-    protected function rules()
+    public function rules()
     {
         return [
             'string',
         ];
     }
 
-    protected function render(Subscriber $subscriber)
+    public function render(Subscriber $subscriber)
     {
         $value = $this->getValue($subscriber);
 
         return view('types.fields.text.index', compact('value'))->render();
     }
 
-    protected function renderForm()
+    public function renderForm()
     {
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');

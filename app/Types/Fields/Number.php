@@ -7,21 +7,21 @@ use App\Models\Subscriber;
 
 class Number extends FieldType
 {
-    protected function rules()
+    public function rules()
     {
         return [
             'numeric',
         ];
     }
 
-    protected function render(Subscriber $subscriber)
+    public function render(Subscriber $subscriber)
     {
         $value = $this->getValue($subscriber);
 
         return view('types.fields.number.index', compact('value'))->render();
     }
 
-    protected function renderForm()
+    public function renderForm()
     {
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');

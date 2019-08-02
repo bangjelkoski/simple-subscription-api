@@ -7,21 +7,21 @@ use App\Models\Subscriber;
 
 class Date extends FieldType
 {
-    protected function rules()
+    public function rules()
     {
         return [
             'date',
         ];
     }
 
-    protected function render(Subscriber $subscriber)
+    public function render(Subscriber $subscriber)
     {
         $value = $this->getValue($subscriber);
 
         return view('types.fields.date.index', compact('value'))->render();
     }
 
-    protected function renderForm()
+    public function renderForm()
     {
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');

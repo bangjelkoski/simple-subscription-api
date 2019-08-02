@@ -11,24 +11,29 @@ abstract class FieldType
     /**
      * @var Field
      */
-    protected $field;
+    public $field;
 
     public function __construct(Field $field)
     {
         $this->field = $field;
     }
 
-    protected static function code()
+    public function getSubscriber()
+    {
+        return Subscriber::find($this->field->pivot->subscriber_id);
+    }
+
+    public static function code()
     {
         return snake_case(class_basename(static::class));
     }
 
-    protected function rules()
+    public function rules()
     {
         return [];
     }
 
-    protected function validateParameters()
+    public function validateParameters()
     {
         $validationRules = array_merge($this->rules(), $this->getParameter('validation'));
         $validationRules = implode('|', $validationRules);
@@ -36,19 +41,19 @@ abstract class FieldType
         return Validator::make(request()->all(), ['value' => $validationRules])->validate();
     }
 
-    protected function getParameter($parameter)
+    public function getParameter($parameter)
     {
         return $this->field->parameters[$parameter] ?? null;
     }
 
-    protected function getValue(Subscriber $subscriber)
+    public function getValue(Subscriber $subscriber)
     {
-        $field = $subscriber->fields()->wherePivot('field_id', $this->field->id)->first();
+        $field = $subscriber->getFieldValue($this->field->code);
 
         return $field->value ?? null;
     }
 
-    abstract protected function render();
+    abstract public function render(Subscriber $subscriber);
 
-    abstract protected function renderForm();
+    abstract public function renderForm();
 }

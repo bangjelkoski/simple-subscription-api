@@ -20,4 +20,9 @@ abstract class SubscriberState
             static::BOUNCED,
         ];
     }
+
+    public static function translate($code)
+    {
+        return trans('states.' . $code);
+    }
 }

@@ -15,7 +15,7 @@ class CreateFieldsTable extends Migration
     {
         Schema::create('fields', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title', 255);
+            $table->string('label', 255);
             $table->string('code', 255)->unique();
             $table->string('placeholder', 255)->nullable();
             $table->string('type', 255);

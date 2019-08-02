@@ -7,21 +7,21 @@ use App\Models\Subscriber;
 
 class Email extends FieldType
 {
-    protected function rules()
+    public function rules()
     {
         return [
             'email',
         ];
     }
 
-    protected function render(Subscriber $subscriber)
+    public function render(Subscriber $subscriber)
     {
         $value = $this->getValue($subscriber);
 
         return view('types.fields.email.index', compact('value'))->render();
     }
 
-    protected function renderForm()
+    public function renderForm()
     {
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');

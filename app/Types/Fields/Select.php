@@ -8,7 +8,7 @@ use Illuminate\Validation\Rule;
 
 class Number extends FieldType
 {
-    protected function rules()
+    public function rules()
     {
         $options = $this->getParameter('options');
 
@@ -17,14 +17,14 @@ class Number extends FieldType
         ];
     }
 
-    protected function render(Subscriber $subscriber)
+    public function render(Subscriber $subscriber)
     {
         $value = $this->getValue($subscriber);
 
         return view('types.fields.date.index', compact('value'))->render();
     }
 
-    protected function renderForm()
+    public function renderForm()
     {
         $options = $this->getParameter('options');
         $placeholder = $this->getParameter('placeholder');

@@ -5,23 +5,23 @@ namespace App\Types\Fields;
 use App\Abstracts\FieldType;
 use App\Models\Subscriber;
 
-class Number extends FieldType
+class Image extends FieldType
 {
-    protected function rules()
+    public function rules()
     {
         return [
             'image',
         ];
     }
 
-    protected function render(Subscriber $subscriber)
+    public function render(Subscriber $subscriber)
     {
         $value = $this->getValue($subscriber);
 
         return view('types.fields.image.index', compact('value'))->render();
     }
 
-    protected function renderForm()
+    public function renderForm()
     {
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');

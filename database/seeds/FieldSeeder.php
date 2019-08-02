@@ -17,32 +17,41 @@ class FieldSeeder extends Seeder
         $fields = FieldRepository::$fields;
 
         factory(Field::class)->create([
-            'title'       => 'Email',
+            'label'       => 'Email',
             'placeholder' => 'john@example.com',
             'type'        => $fields['email'],
             'parameters'  => [
                 'validation' => [
                     'required',
-                    'email',
                 ],
             ],
         ]);
 
         factory(Field::class)->create([
-            'title'       => 'Name',
+            'label'       => 'Name',
             'placeholder' => 'John Doe',
             'type'        => $fields['text'],
             'parameters'  => [
                 'validation' => [
                     'required',
-                    'string',
                     'max:60',
                 ],
             ],
         ]);
 
         factory(Field::class)->create([
-            'title'      => 'State',
+            'label'       => 'Image',
+            'placeholder' => 'Image',
+            'type'        => $fields['image'],
+            'parameters'  => [
+                'validation' => [
+                    'required',
+                ],
+            ],
+        ]);
+
+        factory(Field::class)->create([
+            'label'      => 'State',
             'type'       => $fields['select'],
             'parameters' => [
                 'validation' => [

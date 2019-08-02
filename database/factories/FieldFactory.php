@@ -10,13 +10,12 @@ $factory->define(Field::class, function (Faker $faker) {
     $fields = FieldRepository::$fields;
 
     return [
-        'title'       => $faker->word,
+        'label'       => $faker->word,
         'placeholder' => $faker->word,
         'type'        => $fields['text'],
         'parameters'  => [
             'validation' => [
                 'required',
-                'string',
             ],
         ],
     ];

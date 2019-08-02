@@ -3,12 +3,13 @@
 namespace App\Repositories;
 
 use App\Abstracts\FieldType;
-use App\Types\Field\Date;
-use App\Types\Field\Email;
-use App\Types\Field\Number;
-use App\Types\Field\Select;
-use App\Types\Field\Text;
-use App\Types\Field\Textarea;
+use App\Types\Fields\Date;
+use App\Types\Fields\Email;
+use App\Types\Fields\Image;
+use App\Types\Fields\Number;
+use App\Types\Fields\Select;
+use App\Types\Fields\Text;
+use App\Types\Fields\Textarea;
 
 class FieldRepository
 {
@@ -17,6 +18,7 @@ class FieldRepository
         'email'    => Email::class,
         'number'   => Number::class,
         'select'   => Select::class,
+        'image'    => Image::class,
         'date'     => Date::class,
         'textarea' => Textarea::class,
     ];

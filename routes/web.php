@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\Api\SubscriberController;
 use App\Http\Controllers\AppController;
 
 /*
@@ -11,6 +12,8 @@ use App\Http\Controllers\AppController;
 | contains the "web" middleware group. Now create something great!
 |
  */
+
+Route::get('subscribers', [SubscriberController::class, 'index']);
 
 Route::get('/{any?}', [AppController::class, 'index'])
     ->where('any', '^(?!api|static).*$');

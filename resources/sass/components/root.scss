@@ -48,3 +48,23 @@
         }
     }
 }
+
+.input {
+    @apply shadow w-full rounded bg-white border pl-3 pr-8 w-full h-10 text-sm text-gray-700 outline-none appearance-none;
+
+    &:focus {
+        @apply border-blue-500;
+    }
+
+    &::placeholder {
+        @apply opacity-25 text-xs;
+    }
+
+    &.textarea {
+        @apply h-32 pt-2;
+    }
+
+    &.input-sm {
+        @apply h-8;
+    }
+}

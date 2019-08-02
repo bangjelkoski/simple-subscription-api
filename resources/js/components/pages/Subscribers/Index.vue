@@ -1,6 +1,14 @@
 <template>
     <section class="h-full overflow-y-auto">
-        <h2 class="text-2xl font-bold mb-4">Subscribers</h2>
+        <div class="flex items-center justify-between mb-4">
+            <h2 class="text-2xl font-bold">Subscribers</h2>
+
+            <button class="items-center flex items-center justify-center text-sm rounded-lg bg-blue-500 py-2 px-4 text-white"
+                @click="$router.push({name: 'subscribers-create'})">
+                <span>Create new subscriber</span>
+                <span class="ml-2 text-white">&plus;</span>
+            </button>
+        </div>
 
         <div class="row row-margin">
             <subscriber v-for="subscriber in subscribers"
@@ -11,7 +19,7 @@
 </template>
 
 <script>
-    import Subscriber from '@/partials/subscriber';
+    import Subscriber from '@/partials/Subscriber';
 
     export default {
         data: () => ({

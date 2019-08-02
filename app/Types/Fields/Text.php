@@ -17,7 +17,9 @@ class Text extends FieldType
     {
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');
+        $code = $this->getParameter('code');
+        $value = $this->getValue();
 
-        return view('types.fields.text.form', compact('placeholder', 'label'))->render();
+        return view('types.fields.text.form', compact('placeholder', 'label', 'code', 'value'))->render();
     }
 }

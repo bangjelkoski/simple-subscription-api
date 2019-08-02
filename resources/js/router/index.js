@@ -3,7 +3,8 @@ import VueRouter from 'vue-router';
 
 import Home from '@/pages/Home';
 import SubscribersIndex from '@/pages/Subscribers/Index';
-import FieldsIndex from '@/pages/Fields/Index';
+import SubscribersEdit from '@/pages/Subscribers/Edit';
+import SubscribersCreate from '@/pages/Subscribers/Create';
 
 Vue.use(VueRouter);
 
@@ -14,9 +15,8 @@ export default new VueRouter({
     routes: [
         { path: '/', component: Home, name: 'home' },
         { path: '/subscribers', component: SubscribersIndex, name: 'subscribers-index' },
-        { path: '/subscribers/create', component: SubscribersIndex, name: 'subscribers-create' },
-        { path: '/subscribers/:subscriber', component: SubscribersIndex, name: 'subscribers-edit' },
-        { path: '/fields', component: FieldsIndex, name: 'fields-index' },
+        { path: '/subscribers/create', component: SubscribersCreate, name: 'subscribers-create' },
+        { path: '/subscribers/:subscriber', component: SubscribersEdit, name: 'subscribers-edit' },
     ],
 
     scrollBehavior(to, from, savedPosition) {

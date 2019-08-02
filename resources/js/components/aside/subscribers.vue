@@ -11,12 +11,10 @@
                 <button type="button">Subscribers</button>
                 <span>&rsaquo;</span>
             </router-link>
-            <router-link class="working"
-                :to="{ name: 'fields-index'}"
-                tag="li">
-                <button type="button">Fields</button>
+            <li @click="createdForDemoPurposes">
+                <button type="button">Newsletter</button>
                 <span>&rsaquo;</span>
-            </router-link>
+            </li>
         </ul>
     </div>
 </template>

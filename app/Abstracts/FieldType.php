@@ -20,7 +20,7 @@ abstract class FieldType
 
     public function getSubscriber()
     {
-        return Subscriber::find($this->field->pivot->subscriber_id);
+        return Subscriber::find(optional($this->field->pivot)->subscriber_id);
     }
 
     public static function code()
@@ -43,14 +43,20 @@ abstract class FieldType
 
     public function getParameter($parameter)
     {
-        return $this->field->parameters[$parameter] ?? null;
+        return $this->field->parameters[$parameter] ?? $this->field->{$parameter} ?? '';
     }
 
-    public function getValue(Subscriber $subscriber)
+    public function getValue()
     {
+        $subscriber = $this->getSubscriber();
+
+        if (!$subscriber) {
+            return '';
+        }
+
         $field = $subscriber->getFieldValue($this->field->code);
 
-        return $field->value ?? null;
+        return $field->value ?? '';
     }
 
     abstract public function renderForm();

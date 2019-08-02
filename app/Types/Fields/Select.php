@@ -6,7 +6,7 @@ use App\Abstracts\FieldType;
 use App\Models\Subscriber;
 use Illuminate\Validation\Rule;
 
-class Number extends FieldType
+class Select extends FieldType
 {
     public function rules()
     {

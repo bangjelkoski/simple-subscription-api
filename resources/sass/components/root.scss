@@ -7,6 +7,12 @@
     [class^='col'] {
         @apply px-2;
     }
+
+    &.row-margin {
+        [class^='col'] {
+            @apply my-2;
+        }
+    }
 }
 
 .card {

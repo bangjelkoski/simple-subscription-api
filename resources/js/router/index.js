@@ -14,6 +14,8 @@ export default new VueRouter({
     routes: [
         { path: '/', component: Home, name: 'home' },
         { path: '/subscribers', component: SubscribersIndex, name: 'subscribers-index' },
+        { path: '/subscribers/create', component: SubscribersIndex, name: 'subscribers-create' },
+        { path: '/subscribers/:subscriber', component: SubscribersIndex, name: 'subscribers-edit' },
         { path: '/fields', component: FieldsIndex, name: 'fields-index' },
     ],
 

@@ -24,7 +24,7 @@ $factory->afterCreating(Subscriber::class, function (Subscriber $subscriber, Fak
     ]);
 
     $subscriber->fields()->attach(Field::getFromCode('image')->id, [
-        'value' => $faker->imageUrl,
+        'value' => "/static/images/{$faker->image('public/static/images', 400, 300, null, false)}",
     ]);
 
     $subscriber->fields()->attach(Field::getFromCode('state')->id, [

@@ -10,7 +10,7 @@ class Number extends FieldType
     protected function rules()
     {
         return [
-            'numeric',
+            'image',
         ];
     }
 
@@ -18,7 +18,7 @@ class Number extends FieldType
     {
         $value = $this->getValue($subscriber);
 
-        return view('types.fields.number.index', compact('value'))->render();
+        return view('types.fields.image.index', compact('value'))->render();
     }
 
     protected function renderForm()
@@ -26,6 +26,6 @@ class Number extends FieldType
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');
 
-        return view('types.fields.number.form', compact('placeholder', 'label'))->render();
+        return view('types.fields.text.form', compact('placeholder', 'label'))->render();
     }
 }

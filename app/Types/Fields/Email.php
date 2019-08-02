@@ -3,6 +3,7 @@
 namespace App\Types\Fields;
 
 use App\Abstracts\FieldType;
+use App\Models\Subscriber;
 
 class Email extends FieldType
 {
@@ -13,13 +14,18 @@ class Email extends FieldType
         ];
     }
 
-    protected function render()
+    protected function render(Subscriber $subscriber)
     {
-        return view('types.fields.email.index')->render();
+        $value = $this->getValue($subscriber);
+
+        return view('types.fields.email.index', compact('value'))->render();
     }
 
     protected function renderForm()
     {
-        return view('types.fields.email.form')->render();
+        $placeholder = $this->getParameter('placeholder');
+        $label = $this->getParameter('label');
+
+        return view('types.fields.email.form', compact('placeholder', 'email'))->render();
     }
 }

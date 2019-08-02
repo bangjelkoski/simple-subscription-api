@@ -3,6 +3,7 @@
 namespace App\Abstracts;
 
 use App\Models\Field;
+use App\Models\Subscriber;
 use Illuminate\Validation\Validator;
 
 abstract class FieldType
@@ -38,6 +39,13 @@ abstract class FieldType
     protected function getParameter($parameter)
     {
         return $this->field->parameters[$parameter] ?? null;
+    }
+
+    protected function getValue(Subscriber $subscriber)
+    {
+        $field = $subscriber->fields()->wherePivot('field_id', $this->field->id)->first();
+
+        return $field->value ?? null;
     }
 
     abstract protected function render();

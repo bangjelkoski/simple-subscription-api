@@ -3,6 +3,7 @@
 namespace App\Types\Fields;
 
 use App\Abstracts\FieldType;
+use App\Models\Subscriber;
 
 class Date extends FieldType
 {
@@ -13,13 +14,18 @@ class Date extends FieldType
         ];
     }
 
-    protected function render()
+    protected function render(Subscriber $subscriber)
     {
-        return view('types.fields.date.index')->render();
+        $value = $this->getValue($subscriber);
+
+        return view('types.fields.date.index', compact('value'))->render();
     }
 
     protected function renderForm()
     {
-        return view('types.fields.date.form')->render();
+        $placeholder = $this->getParameter('placeholder');
+        $label = $this->getParameter('label');
+
+        return view('types.fields.date.form', compact('placeholder', 'label'))->render();
     }
 }

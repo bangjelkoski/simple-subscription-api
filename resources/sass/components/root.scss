@@ -1,3 +1,27 @@
-main {
+.h-main {
     height: calc(100vh - 10rem);
+}
+
+.list-arrow {
+    li {
+        @apply flex justify-between items-center px-2 mb-2;
+
+        button {
+            @apply outline-none text-gray-500;
+
+            &:focus {
+                @apply outline-none;
+            }
+
+            &:hover {
+                @apply text-blue-500;
+            }
+        }
+
+        &.working {
+            button {
+                @apply text-gray-700;
+            }
+        }
+    }
 }

@@ -7547,8 +7547,34 @@ video {
   z-index: auto;
 }
 
-main {
+.h-main {
   height: calc(100vh - 10rem);
+}
+
+.list-arrow li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.list-arrow li button {
+  outline: 0;
+  color: #4a5568;
+}
+
+.list-arrow li button:focus {
+  outline: 0;
+}
+
+.list-arrow li button:hover {
+  color: #4299e1;
+}
+
+.list-arrow li.working button {
+  font-weight: 700;
 }
 
 @media (min-width: 640px) {

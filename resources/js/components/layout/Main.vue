@@ -1,7 +1,27 @@
 <template>
-    <main class="mx-auto py-8 w-3/4">
-        <div class="h-full bg-white rounded shadow p-4 overflow-y-auto">
-            <router-view />
+    <div class="py-8 px-4 w-full h-main">
+        <div class="-mx-2 flex flex-wrap h-full">
+
+            <aside class="h-full w-1/4 px-2">
+                <create-button />
+                <dashboard-menu />
+                <subscribers-menu />
+                <about-menu />
+            </aside>
+
+            <main class="h-full w-3/4 px-2">
+                <div class="rounded-lg shadow bg-white h-full">
+                    <router-view />
+                </div>
+            </main>
         </div>
-    </main>
+    </div>
 </template>
+
+<script>
+    import AsideMixin from '../aside';
+
+    export default {
+        mixins: [AsideMixin],
+    };
+</script>

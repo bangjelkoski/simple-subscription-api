@@ -21,7 +21,8 @@
                 </div>
 
                 <!-- Notifications Icon -- Just to make the UI look filled -->
-                <div class="text-gray-500 mr-8 hover:text-blue-700 cursor-pointer">
+                <div class="text-gray-500 mr-8 hover:text-blue-700 cursor-pointer"
+                    @click="createdForDemoPurposes">
                     <svg version="1.2"
                         baseProfile="tiny"
                         xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +32,8 @@
                 </div>
 
                 <!-- Search Icon -- Just to make the UI look filled -->
-                <div class="text-gray-500 mr-8 hover:text-blue-700 cursor-pointer">
+                <div class="text-gray-500 mr-8 hover:text-blue-700 cursor-pointer"
+                    @click="createdForDemoPurposes">
                     <svg version="1.1"
                         xmlns="http://www.w3.org/2000/svg"
                         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -47,7 +49,8 @@
                 </div>
 
                 <!-- Profile Icon -- Just to make the UI look filled -->
-                <div class="w-10 h-10 rounded-full shadow cursor-pointer">
+                <div class="w-10 h-10 rounded-full shadow cursor-pointer"
+                    @click="createdForDemoPurposes">
                     <img src="/static/images/avatar.jpg"
                         alt="Avatar"
                         class="w-full object-cover rounded-full h-auto">

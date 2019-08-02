@@ -13,4 +13,4 @@ use App\Http\Controllers\AppController;
  */
 
 Route::get('/{any?}', [AppController::class, 'index'])
-    ->where('any', '[\/\w\.\,\-]*');
+    ->where('any', '^(?!api|static).*$');

@@ -1,5 +1,5 @@
 <template>
-    <div class="h-full h-full">
+    <div class="my-8 w-3/4 rounded-lg bg-gray-100 shadow-lg mx-auto">
         <app-header />
         <app-main />
         <app-footer />

@@ -33,6 +33,86 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/Header.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/layout/Header.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    homeIconClass: function homeIconClass() {
+      return this.$route.name === 'home' ? 'text-gray-500' : 'text-blue-500';
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -518,7 +598,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "h-full h-full" },
+    { staticClass: "my-8 w-3/4 rounded-lg bg-gray-100 shadow-lg mx-auto" },
     [
       _c("app-header"),
       _vm._v(" "),
@@ -558,8 +638,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("footer", { staticClass: "h-12 py-4 bg-blue-800 shadow" }, [
-      _c("p", { staticClass: "text-center text-gray-200 text-sm" }, [
+    return _c("footer", { staticClass: "py-2" }, [
+      _c("p", { staticClass: "text-center text-gray-500 text-xs" }, [
         _vm._v(
           "Angjelkoski Bojan | me@bangjelkoski.com | https://bangjelkoski.com "
         )
@@ -588,16 +668,153 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "header",
+    { staticClass: "h-12 bg-white border-b w-full rounded-t-lg" },
+    [
+      _c(
+        "div",
+        { staticClass: "flex justify-between items-center h-full px-8" },
+        [
+          _vm._m(0),
+          _vm._v(" "),
+          _c("nav", { staticClass: "flex items-center" }, [
+            _c(
+              "div",
+              {
+                staticClass: "hover:text-blue-700 cursor-pointer mr-8",
+                class: _vm.homeIconClass,
+                on: {
+                  click: function($event) {
+                    return _vm.$router.push({ name: "home" })
+                  }
+                }
+              },
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "fill-current w-6 h-6",
+                    attrs: {
+                      version: "1.1",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                      x: "0px",
+                      y: "0px",
+                      viewBox: "0 0 21 21",
+                      "xml:space": "preserve"
+                    }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        d:
+                          "M18.7,9.3l-7.1-5.6c-0.3-0.3-0.8-0.3-1.2,0L3.4,9.3C3.1,9.5,3,9.7,3,10v7C3,17.6,3.4,18,3.9,18s0.9-0.4,0.9-0.9v-6.6L11,5.6\n\tl6.1,4.9v5.6h-3.4c-0.5,0-0.9,0.4-0.9,0.9s0.4,0.9,0.9,0.9h4.3c0.5,0,0.9-0.4,0.9-0.9v-7C19,9.7,18.9,9.5,18.7,9.3z"
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "text-gray-500 mr-8 hover:text-blue-700 cursor-pointer"
+              },
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "fill-current w-6 h-6",
+                    attrs: {
+                      version: "1.2",
+                      baseProfile: "tiny",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 24 24"
+                    }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        d:
+                          "M19.715 17.301c-.017-.018-1.717-1.854-1.73-6.32-.009-2.607-1.69-4.824-4.019-5.641l.034-.34c0-1.103-.896-2-2-2s-2 .897-2 2l.034.338c-2.336.816-4.019 3.036-4.019 5.646 0 4.462-1.711 6.296-1.721 6.306-.287.286-.374.716-.22 1.091s.521.619.926.619h3.143c.447 1.72 1.999 3 3.857 3s3.41-1.28 3.857-3h3.143c.4 0 .758-.243.915-.61s.076-.799-.2-1.089zm-7.715-10.301c2.189 0 3.978 1.789 3.984 3.987.002.728.046 1.396.118 2.013h-8.2c.071-.617.113-1.286.113-2.016.001-2.196 1.788-3.984 3.985-3.984zm0 13c-.737 0-1.375-.405-1.722-1h3.443c-.346.595-.984 1-1.721 1zm-5.186-3c.352-.736.705-1.731.938-3h8.502c.234 1.269.588 2.264.938 3h-10.378z"
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass:
+                  "text-gray-500 mr-8 hover:text-blue-700 cursor-pointer"
+              },
+              [
+                _c(
+                  "svg",
+                  {
+                    staticClass: "fill-current w-6 h-6",
+                    attrs: {
+                      version: "1.1",
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "xmlns:xlink": "http://www.w3.org/1999/xlink",
+                      x: "0px",
+                      y: "0px",
+                      viewBox: "0 0 21 21",
+                      "xml:space": "preserve"
+                    }
+                  },
+                  [
+                    _c("path", {
+                      attrs: {
+                        d:
+                          "M17.6,15.9l-3.3-3.3c0,0,0,0-0.1,0c0.6-1,1-2.1,1-3.4c0-3.4-2.8-6.2-6.2-6.2S3,5.8,3,9.2c0,3.4,2.8,6.2,6.2,6.2\n\tc1.3,0,2.4-0.4,3.4-1c0,0,0,0,0,0.1l3.3,3.3c0.5,0.5,1.3,0.5,1.8,0C18.1,17.1,18.1,16.3,17.6,15.9z M9.2,13.2c-2.2,0-4-1.8-4-4\n\tc0-2.2,1.8-4,4-4c2.2,0,4,1.8,4,4S11.4,13.2,9.2,13.2z"
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _vm._m(1)
+          ])
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("header", { staticClass: "h-12 bg-white shadow w-full" }, [
-      _c("span", [_vm._v("Header")])
-    ])
+    return _c(
+      "h1",
+      { staticClass: "font-bold lowercase text-lg font-headings" },
+      [
+        _vm._v("subscribers"),
+        _c("span", { staticClass: "text-blue-500" }, [_vm._v("api")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "w-10 h-10 rounded-full shadow cursor-pointer" },
+      [
+        _c("img", {
+          staticClass: "w-full object-cover rounded-full h-auto",
+          attrs: { src: "/static/images/avatar.jpg", alt: "Avatar" }
+        })
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -1016,15 +1233,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Header_vue_vue_type_template_id_a27ab812___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header.vue?vue&type=template&id=a27ab812& */ "./resources/js/components/layout/Header.vue?vue&type=template&id=a27ab812&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Header_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header.vue?vue&type=script&lang=js& */ "./resources/js/components/layout/Header.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Header_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Header_vue_vue_type_template_id_a27ab812___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Header_vue_vue_type_template_id_a27ab812___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -1038,6 +1257,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/components/layout/Header.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/layout/Header.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/layout/Header.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Header.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/layout/Header.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

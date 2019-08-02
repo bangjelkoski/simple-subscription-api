@@ -15,13 +15,14 @@
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset(mix('css/app.css')) }}">
 </head>
 
-<body class="h-screen w-screen overflow-y-hidden bg-gray-200">
+<body class="h-screen w-screen overflow-y-hidden bg-blue-100 font-sans">
     <div id="app" v-cloak>
         <app />
     </div>

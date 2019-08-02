@@ -4,6 +4,4 @@
 
 @tailwind utilities;
 
-main {
-    height: calc(100vh - 6rem);
-}
+@import './components/root';

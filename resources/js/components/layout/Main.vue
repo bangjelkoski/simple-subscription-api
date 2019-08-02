@@ -10,9 +10,7 @@
             </aside>
 
             <main class="h-full w-3/4 px-2">
-                <div class="rounded-lg shadow bg-white h-full">
-                    <router-view />
-                </div>
+                <router-view />
             </main>
         </div>
     </div>

@@ -5,14 +5,18 @@
                 <button type="button">Campaigns</button>
                 <span>&rsaquo;</span>
             </li>
-            <li class="working" @click="$router.push({name: 'subscribers'})">
+            <router-link class="working"
+                :to="{ name: 'subscribers-index'}"
+                tag="li">
                 <button type="button">Subscribers</button>
                 <span>&rsaquo;</span>
-            </li>
-            <li class="working" @click="$router.push({name: 'fields'})">
+            </router-link>
+            <router-link class="working"
+                :to="{ name: 'fields-index'}"
+                tag="li">
                 <button type="button">Fields</button>
                 <span>&rsaquo;</span>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>

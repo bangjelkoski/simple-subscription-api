@@ -7551,6 +7551,24 @@ video {
   height: calc(100vh - 10rem);
 }
 
+.row {
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row [class^=col] {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
 .list-arrow li {
   display: flex;
   justify-content: space-between;
@@ -7562,7 +7580,7 @@ video {
 
 .list-arrow li button {
   outline: 0;
-  color: #4a5568;
+  color: #a0aec0;
 }
 
 .list-arrow li button:focus {
@@ -7574,6 +7592,11 @@ video {
 }
 
 .list-arrow li.working button {
+  color: #4a5568;
+}
+
+.list-arrow li.active button {
+  color: #2b6cb0;
   font-weight: 700;
 }
 

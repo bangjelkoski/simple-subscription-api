@@ -66,7 +66,7 @@
     export default {
         computed: {
             homeIconClass() {
-                return this.$route.name === 'home' ? 'text-gray-500' : 'text-blue-500';
+                return this.$route.name !== 'home' ? 'text-gray-500' : 'text-blue-500';
             },
         },
     };

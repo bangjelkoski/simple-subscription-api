@@ -1,7 +1,7 @@
-import CreateButton from './button';
-import DashboardMenu from './dashboard';
-import SubscribersMenu from './subscribers';
-import AboutMenu from './about';
+import CreateButton from './Button';
+import DashboardMenu from './Dashboard';
+import SubscribersMenu from './Subscribers';
+import AboutMenu from './About';
 
 export default {
     components: {

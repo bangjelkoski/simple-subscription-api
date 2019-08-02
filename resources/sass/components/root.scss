@@ -2,6 +2,17 @@
     height: calc(100vh - 10rem);
 }
 
+.row {
+    @apply -mx-2 flex flex-wrap;
+    [class^='col'] {
+        @apply px-2;
+    }
+}
+
+.card {
+    @apply bg-white rounded-lg shadow;
+}
+
 .list-arrow {
     li {
         @apply flex justify-between items-center px-2 mb-2;
@@ -21,6 +32,12 @@
         &.working {
             button {
                 @apply text-gray-700;
+            }
+        }
+
+        &.active {
+            button {
+                @apply text-blue-700 font-bold;
             }
         }
     }

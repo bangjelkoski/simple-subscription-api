@@ -3,7 +3,6 @@
 namespace App\Types\Fields;
 
 use App\Abstracts\FieldType;
-use App\Models\Subscriber;
 
 class Textarea extends FieldType
 {
@@ -12,13 +11,6 @@ class Textarea extends FieldType
         return [
             'string',
         ];
-    }
-
-    public function render(Subscriber $subscriber)
-    {
-        $value = $this->getValue($subscriber);
-
-        return view('types.fields.textarea.index', compact('value'))->render();
     }
 
     public function renderForm()

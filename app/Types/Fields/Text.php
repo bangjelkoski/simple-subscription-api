@@ -3,7 +3,6 @@
 namespace App\Types\Fields;
 
 use App\Abstracts\FieldType;
-use App\Models\Subscriber;
 
 class Text extends FieldType
 {
@@ -12,13 +11,6 @@ class Text extends FieldType
         return [
             'string',
         ];
-    }
-
-    public function render(Subscriber $subscriber)
-    {
-        $value = $this->getValue($subscriber);
-
-        return view('types.fields.text.index', compact('value'))->render();
     }
 
     public function renderForm()

@@ -53,7 +53,5 @@ abstract class FieldType
         return $field->value ?? null;
     }
 
-    abstract public function render(Subscriber $subscriber);
-
     abstract public function renderForm();
 }

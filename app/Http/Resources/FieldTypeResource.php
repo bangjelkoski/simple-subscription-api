@@ -15,12 +15,9 @@ class FieldTypeResource extends JsonResource
      */
     public function toArray($request)
     {
-        $subscriber = $this->resource->getSubscriber();
-
         return [
-            'code'  => $this::code(),
-            'index' => (new HtmlString($this->render($subscriber)))->toHtml(),
-            'form'  => (new HtmlString($this->renderForm()))->toHtml(),
+            'code' => $this::code(),
+            'form' => (new HtmlString($this->renderForm()))->toHtml(),
         ];
     }
 }

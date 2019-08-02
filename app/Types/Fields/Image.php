@@ -3,7 +3,6 @@
 namespace App\Types\Fields;
 
 use App\Abstracts\FieldType;
-use App\Models\Subscriber;
 
 class Image extends FieldType
 {
@@ -12,13 +11,6 @@ class Image extends FieldType
         return [
             'image',
         ];
-    }
-
-    public function render(Subscriber $subscriber)
-    {
-        $value = $this->getValue($subscriber);
-
-        return view('types.fields.image.index', compact('value'))->render();
     }
 
     public function renderForm()

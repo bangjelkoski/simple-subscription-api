@@ -3,7 +3,6 @@
 namespace App\Types\Fields;
 
 use App\Abstracts\FieldType;
-use App\Models\Subscriber;
 
 class Date extends FieldType
 {
@@ -12,13 +11,6 @@ class Date extends FieldType
         return [
             'date',
         ];
-    }
-
-    public function render(Subscriber $subscriber)
-    {
-        $value = $this->getValue($subscriber);
-
-        return view('types.fields.date.index', compact('value'))->render();
     }
 
     public function renderForm()

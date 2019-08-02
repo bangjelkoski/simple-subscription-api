@@ -3,7 +3,6 @@
 namespace App\Types\Fields;
 
 use App\Abstracts\FieldType;
-use App\Models\Subscriber;
 use Illuminate\Validation\Rule;
 
 class Select extends FieldType
@@ -15,13 +14,6 @@ class Select extends FieldType
         return [
             Rule::in(array_keys($options)),
         ];
-    }
-
-    public function render(Subscriber $subscriber)
-    {
-        $value = $this->getValue($subscriber);
-
-        return view('types.fields.date.index', compact('value'))->render();
     }
 
     public function renderForm()

@@ -14,7 +14,7 @@ class FieldSeeder extends Seeder
      */
     public function run()
     {
-        $fields = FieldRepository::$fields;
+        $fields = FieldRepository::fields();
 
         factory(Field::class)->create([
             'label'       => 'Email',
@@ -58,7 +58,12 @@ class FieldSeeder extends Seeder
                     'required',
                 ],
 
-                'options'    => SubscriberState::getStates(),
+                'options'    => collect(SubscriberState::getStates())->map(function ($state) {
+                    return [
+                        'label' => SubscriberState::translate($state),
+                        'value' => $state,
+                    ];
+                }),
             ],
         ]);
     }

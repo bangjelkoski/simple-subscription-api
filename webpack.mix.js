@@ -24,6 +24,7 @@ mix.webpackConfig({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'resources/js/components/'),
+            '@fields': path.resolve(__dirname, 'resources/js/components/types/fields'),
             validators: 'vuelidate/lib/validators',
         },
     },

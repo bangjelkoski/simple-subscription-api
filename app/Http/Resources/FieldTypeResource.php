@@ -3,7 +3,6 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Illuminate\Support\HtmlString;
 
 class FieldTypeResource extends JsonResource
 {
@@ -16,8 +15,8 @@ class FieldTypeResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'code' => $this::code(),
-            'form' => (new HtmlString($this->renderForm()))->toHtml(),
+            'code'        => $this::code(),
+            'formOptions' => $this->formOptions(),
         ];
     }
 }

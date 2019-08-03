@@ -7,7 +7,7 @@ use App\Repositories\FieldRepository;
 use Faker\Generator as Faker;
 
 $factory->define(Field::class, function (Faker $faker) {
-    $fields = FieldRepository::$fields;
+    $fields = FieldRepository::fields();
 
     return [
         'label'       => $faker->word,

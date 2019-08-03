@@ -20,4 +20,13 @@ class Subscriber extends Model
 
         return $result ? optional($result->pivot)->value : null;
     }
+
+    public function setFieldValues()
+    {
+        return collect(array_keys(request()->all()))->each(function ($field) {
+            $this->fields()->attach(Field::getFromCode($field)->id, [
+                'value' => request()->get($field),
+            ]);
+        });
+    }
 }

@@ -16,12 +16,14 @@ class Select extends FieldType
         ];
     }
 
-    public function renderForm()
+    public function formOptions()
     {
         $options = $this->getParameter('options');
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');
+        $code = $this->getParameter('code');
+        $value = $this->getValue();
 
-        return view('types.fields.date.form', compact('options', 'label', 'placeholder'))->render();
+        return compact('placeholder', 'label', 'options', 'code', 'value');
     }
 }

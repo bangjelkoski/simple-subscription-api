@@ -13,11 +13,13 @@ class Image extends FieldType
         ];
     }
 
-    public function renderForm()
+    public function formOptions()
     {
         $placeholder = $this->getParameter('placeholder');
         $label = $this->getParameter('label');
+        $code = $this->getParameter('code');
+        $value = $this->getValue();
 
-        return view('types.fields.text.form', compact('placeholder', 'label'))->render();
+        return compact('placeholder', 'label', 'code', 'value');
     }
 }

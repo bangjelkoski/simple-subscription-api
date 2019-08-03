@@ -23,7 +23,7 @@ abstract class FieldType
         return Subscriber::find(optional($this->field->pivot)->subscriber_id);
     }
 
-    public static function code()
+    public function code()
     {
         return snake_case(class_basename(static::class));
     }
@@ -43,21 +43,17 @@ abstract class FieldType
 
     public function getParameter($parameter)
     {
-        return $this->field->parameters[$parameter] ?? $this->field->{$parameter} ?? '';
+        return $this->field->parameters[$parameter] ?? $this->field->{$parameter} ?? null;
     }
 
     public function getValue()
     {
-        $subscriber = $this->getSubscriber();
-
-        if (!$subscriber) {
-            return '';
+        if (!$subscriber = $this->getSubscriber()) {
+            return null;
         }
 
-        $field = $subscriber->getFieldValue($this->field->code);
-
-        return $field->value ?? '';
+        return $subscriber->getFieldValue($this->field->code) ?? null;
     }
 
-    abstract public function renderForm();
+    abstract public function formOptions();
 }

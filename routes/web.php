@@ -12,5 +12,7 @@ use App\Http\Controllers\AppController;
 |
  */
 
+// Route::get('subscribers', [SubscriberController::class, 'index']);
+
 Route::get('/{any?}', [AppController::class, 'index'])
     ->where('any', '^(?!api|static).*$');

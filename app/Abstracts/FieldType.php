@@ -33,12 +33,12 @@ abstract class FieldType
         return [];
     }
 
-    public function validateParameters()
+    public function validate()
     {
         $validationRules = array_merge($this->rules(), $this->getParameter('validation'));
         $validationRules = implode('|', $validationRules);
 
-        return Validator::make(request()->all(), ['value' => $validationRules])->validate();
+        return validator(request()->all(), ['value' => $validationRules])->validate();
     }
 
     public function getParameter($parameter)

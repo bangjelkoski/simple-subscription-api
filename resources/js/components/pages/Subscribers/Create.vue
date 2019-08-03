@@ -18,7 +18,7 @@
             <div class="col w-full">
                 <button type="button"
                     @click="handleFormSubmitted"
-                    class="text-center text-sm rounded-lg bg-blue-500 py-3 px-4 text-white">
+                    class="text-center text-sm rounded-lg bg-blue-500 py-3 px-4 text-white outline-none focus:outline-none">
                     Create
                 </button>
             </div>
@@ -36,9 +36,16 @@
 
         methods: {
             handleFormSubmitted() {
-                window.axios.post(`/api/subscribers`, this.form).then(() => {
-                    return this.$router.push({ name: 'subscribers-index' });
-                });
+                window.axios
+                    .post(`/api/subscribers`, this.form)
+                    .then(() => {
+                        return this.$router.push({ name: 'subscribers-index' });
+                    })
+                    .catch(({ response }) => {
+                        if (response.status === 422) {
+                            alert('Please fill out the form');
+                        }
+                    });
             },
         },
 

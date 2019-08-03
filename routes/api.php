@@ -20,5 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('subscribers', [SubscriberController::class, 'index']);
+Route::get('subscribers/{subscriber}', [SubscriberController::class, 'get']);
 Route::post('subscribers', [SubscriberController::class, 'store']);
+Route::post('subscribers/{subscriber}', [SubscriberController::class, 'update']);
 Route::get('fields', [FieldController::class, 'index']);

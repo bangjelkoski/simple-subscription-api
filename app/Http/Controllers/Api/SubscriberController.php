@@ -12,6 +12,11 @@ class SubscriberController
         return SubscriberResource::collection(Subscriber::all());
     }
 
+    public function get(Subscriber $subscriber)
+    {
+        return new SubscriberResource($subscriber);
+    }
+
     public function store()
     {
         $subscriber = Subscriber::create();
@@ -22,7 +27,7 @@ class SubscriberController
 
     public function update(Subscriber $subscriber)
     {
-        $subscriber->fields()->delete();
+        $subscriber->fields()->detach();
         $subscriber->setFieldValues();
 
         return response()->json(['success' => true], 200);
